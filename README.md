@@ -10,4 +10,4 @@ The algorithm sorting works as intended, but the size of array depends on your b
 
 In future version I want to add a counter for n. of operations (Big O).
 
-The latest version rn is 1.2!
+The latest version rn is 1.3!
