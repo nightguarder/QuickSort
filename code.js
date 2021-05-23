@@ -3,7 +3,6 @@ let values = [];
 let states = [];
 let w =10;
 let fontsize = 50; //optimal size
-
 let array = [];
 let duration = 0;
 
@@ -12,8 +11,6 @@ function preload(){
     font = loadFont("/TrenchThin-16R0.otf");
     console.log(font);
 }
-//let createCanvas = document.createElement("canvas");
-//it is present in p5.min data
 function setup(){
     createCanvas(windowWidth, windowHeight);
     values = new Array(floor(width/w));
@@ -32,9 +29,9 @@ function setup(){
 
 
 async function Quicksort(array,start,end){
-    if (start>=end){  //its a recursive function so this prevents from loop
+    if (start>=end)  //its a recursive function so this prevents from loop
     return;
-    }
+    
 
     //initialize partinion,which chooses the pivot and sorts...
     let index = await Partition(array,start,end);
@@ -64,16 +61,14 @@ async function Quicksort(array,start,end){
         duration =obj.duration;
         duration++;
       }
-     //console.log(Math.floor(duration/1000))
     }
   getData();
 }
 
 let counter =0;
 async function Partition(array,start,end){
-    for (let i = start; i < end; i++) {
-        states[i]=1;
-    }
+    for (let i = start; i < end; i++)
+        states[i]=1;  
 
     let pivotValue = array[end];
     let pivotIndex = start;
@@ -104,9 +99,11 @@ async function Swap(array, a,b){
     array[a]=array[b];
     array[b] = temp;
 }
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  
 
   function draw() {
     background(0);
@@ -132,5 +129,6 @@ async function Swap(array, a,b){
         text("n. of Inversions: " +counter, x,80)
         /* text("array size: " +values.length,x,90) */
         text("elapsed time: " +Math.floor(duration) +"ms",x,120)
+        //change this to seconds? 
     }
     
