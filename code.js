@@ -5,6 +5,7 @@ let w =10;
 let fontsize = 50; //optimal size
 
 let array = [];
+let duration = 0;
 
 
 function preload(){
@@ -42,7 +43,7 @@ async function Quicksort(array,start,end){
     //recursively sort the array
     //const t0=performance.now()
     performance.mark("start");
-    
+
     await Promise.all([
         Quicksort(array,start,index-1),
         Quicksort(array,index+1,end),
@@ -52,12 +53,20 @@ async function Quicksort(array,start,end){
     performance.mark("end");
     performance.measure('measure', 'start', 'end');
     //console.log(performance.measure("measure"));
-    await performance.measure("measure");
-    console.log(performance.measure("measure"))
-    performance.getEntriesByName("measure")
-   // const t1=performance.now()
-   // const tt= (t1-t0);
-    // console.log((tt)+"ms");
+
+    //get duration from performance.measure in JSON 
+    async function getData(){
+      let raw_data = await performance.measure("measure");
+      let stringify =JSON.stringify(raw_data);
+      let obj= JSON.parse(stringify);
+
+      for(duration =0;duration<1000;duration++){
+        duration =obj.duration;
+        duration++;
+      }
+     //console.log(Math.floor(duration/1000))
+    }
+  getData();
 }
 
 let counter =0;
@@ -122,5 +131,6 @@ async function Swap(array, a,b){
         /* text("Time complexity: O(nLogn)",x,50) */
         text("n. of Inversions: " +counter, x,80)
         /* text("array size: " +values.length,x,90) */
+        text("elapsed time: " +Math.floor(duration) +"ms",x,120)
     }
     
