@@ -1,7 +1,7 @@
 # QuickSort
 Sorting algorithm with p5js
 
-Uploaded a basic version of the Quicksort (1.0). You can test it yourself, on your local machine!
+Uploaded a basic version of the Quicksort (1.3). You can test it yourself, on your local machine!
 
 After watching the coding train tutorial I decided to code it myself. 
 https://thecodingtrain.com/CodingChallenges/143-quicksort
