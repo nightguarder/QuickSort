@@ -9,5 +9,6 @@ https://thecodingtrain.com/CodingChallenges/143-quicksort
 The algorithm sorting works as intended, but the size of array depends on your browser window size. Bigger = more data, Smaller = less data
 
 In future version I want to add a counter for n. of operations (Big O).
+and a timer for how long the algorithm runs. 
 
 The latest version rn is 1.3!
