@@ -7,3 +7,5 @@ After watching the coding train tutorial I decided to code it myself.
 https://thecodingtrain.com/CodingChallenges/143-quicksort
 
 In future version I want to add a counter for n. of operations (Big O).
+
+The latest version rn is 1.2!
