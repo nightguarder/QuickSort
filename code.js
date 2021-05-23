@@ -22,7 +22,7 @@ function setup(){
     textSize(fontsize);
     
     //creating random elements
-    for (let i = 0; i < values.length; i++) {   //maximus size is 153 values, then out of memory :(
+    for (let i = 0; i < values.length; i++) {   //the values.length depends on your browser window size
            values[i] = random(height);
            states[i] = -1;
     }
